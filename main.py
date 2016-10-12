@@ -18,9 +18,10 @@ def index():
     result = []
     for line in tagger().parse(request.query.q).split('\n'):
         line = line.strip()
-        if line == 'EOS':
-            break
-        surface, features = line.split('\t')
+        parts = line.split('\t', 1)
+        if line == 'EOS' or len(parts) <= 1:
+            continue
+        surface, features = parts
         result.append({
             'surface': surface,
             'features': features.split(',')
