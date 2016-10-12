@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-from bottle import route, run, request
+from bottle import route, request, default_app
 from natto import MeCab
 
 
@@ -29,4 +29,4 @@ def index():
         'result': result
     }
 
-run(host='0.0.0.0', port=80, reloader=True)
+app = default_app()
