@@ -6,6 +6,6 @@ RUN pip install bottle
 
 COPY . /usr/src/app
 
-ENV DICT_DIR=/usr/lib/mecab/dic/mecab-ipadic-neologd
+ENV MECAB_DICDIR=/usr/lib/mecab/dic/mecab-ipadic-neologd
 
 CMD [ "python", "main.py" ]

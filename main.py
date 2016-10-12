@@ -6,9 +6,9 @@ from natto import MeCab
 
 
 def tagger():
-    dictdir = os.environ.get('DICT_DIR')
-    if dictdir:
-        return MeCab('-d {}'.format(dictdir))
+    dicdir = os.environ.get('MECAB_DICDIR')
+    if dicdir:
+        return MeCab('-d {}'.format(dicdir))
     else:
         return MeCab()
 
