@@ -3,8 +3,8 @@ FROM yamitzky/miniconda-neologd:miniconda3
 WORKDIR /usr/src/app
 
 RUN pip install \
-      bottle \
-      gunicorn
+      bottle==0.12.13 \
+      gunicorn==19.7.1
 
 COPY . /usr/src/app
 
