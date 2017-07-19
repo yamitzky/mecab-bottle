@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 import os
+from functools import lru_cache
 
 from bottle import route, request, default_app
 from natto import MeCab
 
 
+@lru_cache(maxsize=None)
 def tagger():
     dicdir = os.environ.get('MECAB_DICDIR')
     if dicdir:
@@ -29,5 +31,6 @@ def index():
     return {
         'result': result
     }
+
 
 app = default_app()
