@@ -35,7 +35,7 @@ RUN apt-get remove --purge --auto-remove -y \
 
 COPY . /usr/src/app
 
-ENV MECAB_DICDIR=/usr/lib/mecab/dic/mecab-ipadic-neologd
+ENV MECAB_DICDIR=/usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd
 
 EXPOSE 80
 CMD [ "python", "-m", "bottle", "-b", "0.0.0.0:80", "main" ]
